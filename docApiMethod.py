@@ -1,3 +1,6 @@
+# This is a failed method
+# Reason: the documents are view only and do not take OAuth. I am unable to retrieve the document ID and since it does not use OAuth, I cannot read with the api.
+
 import os.path
 
 from google.auth.transport.requests import Request
@@ -6,12 +9,15 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-# If modifying these scopes, delete the file token.json.
 SCOPES = ["https://www.googleapis.com/auth/documents.readonly"]
 
 # The ID of a sample document.
+DOCUMENT_URL = "https://docs.google.com/document/d/e/2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq/pub"
+# DOCUMENT_URL = input()
+# print(DOCUMENT_URL.split("/")[-2])
+# DOCUMENT_ID = DOCUMENT_URL.split("/")[-2]
 DOCUMENT_ID = "195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE"
-
+DOCUMENT_ID = "2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq"
 
 def main():
   """Shows basic usage of the Docs API.
